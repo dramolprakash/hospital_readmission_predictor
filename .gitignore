@@ -9,13 +9,6 @@ data/features/
 *.pkl
 *.pickle
 
-# Model files
-models/
-*.model
-*.joblib
-*.h5
-*.ckpt
-
 # Jupyter notebook checkpoints and outputs
 **/.ipynb_checkpoints/
 *.ipynb_checkpoints
@@ -67,11 +60,6 @@ Thumbs.db
 *.temp
 logs/
 temp/
-
-# Reports and outputs (optional - you might want to track some)
-reports/*.pdf
-reports/*.png
-reports/*.jpg
 
 # Large model artifacts
 *.bin

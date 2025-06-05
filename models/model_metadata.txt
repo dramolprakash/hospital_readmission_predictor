@@ -1,0 +1,42 @@
+READMISSION PREDICTION MODEL METADATA
+==================================================
+
+MODEL INFORMATION:
+- Algorithm: Logistic Regression
+- Training Date: 2025-06-04 20:49:29
+- Random State: 42
+- Features: 50
+- Training Samples: 53,418
+- Test Samples: 13,355
+
+PERFORMANCE METRICS:
+- Accuracy: 0.7506
+- Precision: 0.1942
+- Recall: 0.4642
+- F1: 0.2738
+- Auc: 0.6935
+
+BUSINESS IMPACT:
+- Net Savings: $738,000
+- Annual Net Savings: $1,476,000
+- ROI: 45.6%
+- Prevented Readmissions: 157
+- Annual Prevented: 314
+- Prevention Rate: 11.6%
+
+MODEL PARAMETERS:
+- C: 0.1
+- class_weight: balanced
+- dual: False
+- fit_intercept: True
+- intercept_scaling: 1
+- l1_ratio: None
+- max_iter: 2000
+- multi_class: deprecated
+- n_jobs: None
+- penalty: l2
+- random_state: 42
+- solver: liblinear
+- tol: 0.0001
+- verbose: 0
+- warm_start: False

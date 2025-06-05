@@ -1,0 +1,33 @@
+READMISSION MODEL DEPLOYMENT GUIDE
+=============================================
+
+FILES INCLUDED:
+- readmission_model_*.joblib: Trained model
+- label_encoders.joblib: Feature encoders (if applicable)
+- feature_scaler.joblib: Feature scaler (if applicable)
+- feature_names.txt: List of required features
+- model_metadata.txt: Model information and performance
+- predict_readmission.py: Prediction script
+
+DEPLOYMENT REQUIREMENTS:
+- Python 3.7+
+- scikit-learn
+- pandas
+- numpy
+- joblib
+
+USAGE:
+1. Load model: model = joblib.load('readmission_model_*.joblib')
+2. Prepare patient data with required features
+3. Make prediction: probability = model.predict_proba(data)[:, 1]
+4. Apply business rules for intervention
+
+CLINICAL INTERPRETATION:
+- Probability >= 0.5: High risk, consider intervention
+- Probability 0.3-0.5: Moderate risk, monitor closely
+- Probability < 0.3: Low risk, standard care
+
+PERFORMANCE EXPECTATIONS:
+- Precision: 19.4%
+- Recall: 46.4%
+- Expected ROI: 46%
