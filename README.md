@@ -85,6 +85,26 @@ Place the following files in `data/raw/`:
 - ROI: 45%
 - Break-even: 108 prevented readmissions
 
+## 📊 Visualizations
+
+### Business Impact Dashboard
+<div align="center">
+  <img src="models/business_impact_analysis.png" alt="Business Impact Analysis" width="800"/>
+  <p><em>Cost-benefit analysis, ROI projections, and readmission prevention impact</em></p>
+</div>
+
+### Model Performance Dashboard  
+<div align="center">
+  <img src="models/logistic_regression_performance.png" alt="Model Performance Dashboard" width="800"/>
+  <p><em>ROC curves, precision-recall analysis, confusion matrix, and risk stratification</em></p>
+</div>
+
+### Key Insights from Visualizations
+- **Cost-Benefit**: $735K annual net savings with 45% ROI
+- **Risk Stratification**: Clear 0%-16% readmission gradient across risk groups
+- **Model Performance**: 69.4% AUC with excellent precision-recall balance
+- **Feature Importance**: Chronic conditions and comorbidity scores drive predictions
+
 ## 🔬 Technical Highlights
 
 - 100/100 quality score — zero missing values
