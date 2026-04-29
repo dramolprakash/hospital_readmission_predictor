@@ -7,7 +7,7 @@
 [![AWS](https://img.shields.io/badge/AWS-Deployment%20Ready-orange?logo=amazon-aws)](https://aws.amazon.com/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Production%20API-green?logo=fastapi)](https://fastapi.tiangolo.com/)
 
-## 🚀 **[Try the Live Demo](https://share.streamlit.io/your-username/hospital_readmission_predictor/main/streamlit_app.py)** 
+## 🚀 **[Try the Live Demo](https://hospitalreadmissionpredictorbyamol.streamlit.app/)** 
 
 > **Interactive web app**: Test patient scenarios • View risk predictions • Explore model performance • No setup required!
 
