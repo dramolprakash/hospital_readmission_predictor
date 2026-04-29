@@ -1,6 +1,6 @@
 # 🏥 Hospital Readmission Risk Predictor
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/your-username/hospital_readmission_predictor/main/streamlit_app.py)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://hospitalreadmissionpredictorbyamol.streamlit.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue?logo=docker)](https://www.docker.com/)
@@ -39,36 +39,28 @@ A production-ready machine learning system to predict 30-day hospital readmissio
 hospital_readmission_predictor/
 ├── 🎮 streamlit_app.py              # Interactive demo app
 ├── 🐳 Dockerfile                   # Production containerization
-├── 🚀 deploy.sh                    # One-command AWS deployment
-├── 📊 notebooks/                   # ML development pipeline
-│   ├── 01_data_loading_exploration.ipynb
-│   ├── 02_data_combination_preprocessing.ipynb
-│   ├── 03_target_variable_creation.ipynb
-│   ├── 04_feature_engineering.ipynb
-│   └── 05_model_development.ipynb
+├── 📊 01_data_loading_exploration.ipynb
+├── 📊 02_data_combination_preprocessing.ipynb
+├── 📊 03_target_variable_creation.ipynb
+├── 📊 04_feature_engineering.ipynb
+├── 📊 05_model_development.ipynb
 ├── 🤖 models/                      # Trained model artifacts
 │   ├── readmission_model_logistic_regression.joblib
 │   ├── predict_readmission.py
 │   ├── feature_names.txt
 │   └── model_metadata.txt
-├── 🌐 api/                         # Production FastAPI
+├── 🌐 api/                         # FastAPI REST API
 │   ├── main.py                     # REST API endpoints
 │   └── requirements.txt            # API dependencies
-├── ☁️ aws/                        # Cloud infrastructure
-│   ├── cloudformation.yml          # Infrastructure as code
-│   └── ecs-task-definition.json    # Container configuration
-├── 🧪 tests/                      # Comprehensive testing
-│   ├── test_api.py                 # API endpoint tests
-│   └── test_sample.py              # Demo test script
-└── 📚 docs/                       # Documentation
-    ├── DEPLOYMENT_GUIDE.md         # Detailed deployment guide
-    └── STREAMLIT_DEPLOYMENT.md     # Demo deployment guide
+└── 🧪 tests/                      # Test suite
+    ├── test_api.py                 # API endpoint tests
+    └── test_sample.py              # Demo test script
 ```
 
 ## 🎮 Interactive Demo Application
 
 ### 🌐 Live Web Application
-**[→ Launch Demo App](https://share.streamlit.io/your-username/hospital_readmission_predictor/main/streamlit_app.py)**
+**[→ Launch Demo App](https://hospitalreadmissionpredictorbyamol.streamlit.app/)**
 
 **New Features (January 2025):**
 - 🎯 **Interactive Risk Calculator**: Real-time predictions with visual risk gauges
@@ -100,30 +92,9 @@ streamlit run streamlit_app.py
 - **Comprehensive Analysis**: From risk prediction to business impact
 - **Educational**: Learn how ML applies to healthcare
 
-## 🏭 Production-Ready Deployment
-
-### 🚀 One-Command AWS Deployment
-**New: Complete production infrastructure with single command**
-
-```bash
-# Clone repository
-git clone <repository-url>
-cd hospital_readmission_predictor
-
-# Deploy to AWS (creates entire infrastructure)
-./deploy.sh prod us-east-1
-```
-
-**What gets deployed:**
-- 🐳 **Docker Container**: Optimized production image
-- ⚖️ **Load Balancer**: Auto-scaling with health checks
-- 🏗️ **ECS Fargate**: Serverless container orchestration
-- 📊 **CloudWatch**: Comprehensive monitoring and logging
-- 🔒 **Security**: VPC isolation, security groups, IAM roles
-- 💰 **Cost Optimized**: Pay only for what you use (~$82/month)
+## 🏭 Local API Deployment
 
 ### 🌐 FastAPI REST API
-**Production-grade API for hospital system integration**
 
 ```bash
 # Local development
@@ -135,13 +106,7 @@ docker-compose up --build
 # - Predictions: http://localhost:8000/predict
 ```
 
-**API Features:**
-- 🔌 **REST Endpoints**: `/predict`, `/predict/batch`, `/model/info`
-- ✅ **Input Validation**: Comprehensive data validation with clinical ranges
-- 🏥 **Clinical Integration**: Designed for EHR/EMR system integration
-- 📈 **Auto-scaling**: Handles 1-10 instances based on demand
-- 🔒 **Security**: Production-ready with authentication hooks
-- 📊 **Monitoring**: Built-in health checks and performance metrics
+**API Endpoints:** `/predict`, `/predict/batch` (up to 100 patients), `/model/info`, `/health`
 
 ### 🛠️ Development Setup
 
@@ -187,39 +152,6 @@ For full notebook reproduction, place these files in `data/raw/`:
 
 **The trained model and demo work independently of these files.**
 
----
-
-## 🎯 Deployment Options Comparison
-
-### 🎪 **Demo vs Production: Choose Your Path**
-
-| Feature | 🎮 Streamlit Demo | 🏭 FastAPI + AWS Production |
-|---------|-------------------|------------------------------|
-| **Purpose** | Portfolio showcase, demos | Real hospital deployment |
-| **Setup Time** | 2 minutes | 10 minutes |
-| **Cost** | Free forever | ~$82/month |
-| **Audience** | Recruiters, researchers | Clinical teams, IT departments |
-| **Scalability** | Single user | Thousands of users |
-| **Integration** | Standalone web app | REST API for EHR/EMR systems |
-| **Security** | Basic | Enterprise HIPAA-ready |
-| **Monitoring** | Basic analytics | Full observability stack |
-
-### 🎯 **When to Use Each**
-
-#### 🎮 Use Streamlit Demo for:
-- ✅ **Job interviews** and portfolio demonstrations
-- ✅ **Research presentations** and academic sharing  
-- ✅ **Proof of concept** discussions with stakeholders
-- ✅ **Educational purposes** and public demonstrations
-- ✅ **Rapid prototyping** and iterative development
-
-#### 🏭 Use FastAPI + AWS for:
-- ✅ **Hospital pilot programs** and clinical trials
-- ✅ **EHR/EMR integration** with existing hospital systems
-- ✅ **Commercial SaaS** product development
-- ✅ **High-volume prediction** requirements (>1000/day)
-- ✅ **Enterprise security** and compliance requirements
-- ✅ **Multi-tenant** deployments across multiple hospitals
 
 ---
 
@@ -342,10 +274,6 @@ joblib>=1.3.0
 ### 🏭 **Production-Ready Infrastructure**
 - **FastAPI REST API**: Enterprise-grade endpoints for hospital integration
 - **Docker Containerization**: Optimized production deployment
-- **AWS Cloud Deployment**: One-command infrastructure setup
-- **Auto-scaling Architecture**: ECS Fargate with load balancing
-- **Comprehensive Monitoring**: CloudWatch logs and performance metrics
-- **Security Hardening**: VPC isolation, IAM roles, security groups
 
 ### 🧪 **Testing & Quality Assurance**
 - **Comprehensive Test Suite**: API endpoint and integration testing
@@ -392,7 +320,7 @@ joblib>=1.3.0
 ## 🚀 Getting Started (Quick Links)
 
 ### **🎯 I want to see the demo immediately**
-**[→ Launch Live Demo](https://share.streamlit.io/your-username/hospital_readmission_predictor/main/streamlit_app.py)**
+**[→ Launch Live Demo](https://hospitalreadmissionpredictorbyamol.streamlit.app/)**
 
 ### **🔬 I want to explore the data science**
 ```bash
@@ -402,14 +330,7 @@ pip install -r requirements.txt
 jupyter lab  # Start with 01_data_loading_exploration.ipynb
 ```
 
-### **🏭 I want to deploy to production**
-```bash
-git clone <repository-url>
-cd hospital_readmission_predictor
-./deploy.sh prod us-east-1  # One-command AWS deployment
-```
-
-### **🛠️ I want to develop the API locally**
+### **🛠️ I want to run the API locally**
 ```bash
 git clone <repository-url>
 cd hospital_readmission_predictor
@@ -419,10 +340,8 @@ docker-compose up --build
 
 ---
 
-## 📞 Support & Documentation
+## 📞 Documentation
 
-- **📚 Deployment Guide**: [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
-- **🎮 Demo Setup**: [STREAMLIT_DEPLOYMENT.md](STREAMLIT_DEPLOYMENT.md)
 - **🔗 API Documentation**: Available at `/docs` endpoint when running
 - **🧪 Test Examples**: [test_sample.py](test_sample.py)
 - **📊 Model Details**: [models/model_metadata.txt](models/model_metadata.txt)

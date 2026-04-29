@@ -4,15 +4,9 @@ A Streamlit web application demonstrating the readmission prediction model
 """
 
 import streamlit as st
-import pandas as pd
-import numpy as np
 import plotly.graph_objects as go
-import plotly.express as px
-from plotly.subplots import make_subplots
 import joblib
 import os
-from datetime import datetime, date
-import base64
 
 # Configure page
 st.set_page_config(
@@ -441,72 +435,7 @@ def main():
         
         # Performance visualization
         st.subheader("Model Performance Details")
-        
-        # Confusion Matrix (simulated)
-        fig = make_subplots(
-            rows=1, cols=2,
-            subplot_titles=('ROC Curve', 'Precision-Recall Curve'),
-            specs=[[{"secondary_y": False}, {"secondary_y": False}]]
-        )
-        
-        # ROC Curve (simulated data)
-        fpr = np.linspace(0, 1, 100)
-        tpr = np.power(fpr, 0.5) * 0.85  # Simulated ROC curve
-        
-        fig.add_trace(
-            go.Scatter(x=fpr, y=tpr, name='ROC Curve (AUC = 0.694)', line=dict(color='blue')),
-            row=1, col=1
-        )
-        fig.add_trace(
-            go.Scatter(x=[0, 1], y=[0, 1], name='Random Classifier', line=dict(dash='dash', color='red')),
-            row=1, col=1
-        )
-        
-        # Precision-Recall Curve (simulated data)
-        recall = np.linspace(0, 1, 100)
-        precision = 0.3 * np.exp(-2 * recall) + 0.1  # Simulated PR curve
-        
-        fig.add_trace(
-            go.Scatter(x=recall, y=precision, name='PR Curve', line=dict(color='green')),
-            row=1, col=2
-        )
-        
-        fig.update_xaxes(title_text="False Positive Rate", row=1, col=1)
-        fig.update_yaxes(title_text="True Positive Rate", row=1, col=1)
-        fig.update_xaxes(title_text="Recall", row=1, col=2)
-        fig.update_yaxes(title_text="Precision", row=1, col=2)
-        
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
-        
-        # Feature importance (top features from your model)
-        st.subheader("🔍 Most Important Features")
-        
-        feature_importance = pd.DataFrame({
-            'Feature': [
-                'Comprehensive Risk Score',
-                'Prior Admissions (365d)',
-                'Chronic Condition Count',
-                'Age at Admission',
-                'Length of Stay',
-                'Congestive Heart Failure',
-                'Clinical Complexity Score',
-                'Recent Admissions',
-                'Diabetes + CHF Combo',
-                'High Comorbidity Flag'
-            ],
-            'Importance': [0.15, 0.12, 0.11, 0.09, 0.08, 0.07, 0.06, 0.05, 0.04, 0.04]
-        })
-        
-        fig = px.bar(
-            feature_importance,
-            x='Importance',
-            y='Feature',
-            orientation='h',
-            title='Top 10 Most Important Features'
-        )
-        fig.update_layout(height=400)
-        st.plotly_chart(fig, use_container_width=True)
+        st.image("models/logistic_regression_performance.png", use_container_width=True)
     
     with tab3:
         st.header("💰 Business Impact Analysis")
@@ -529,23 +458,7 @@ def main():
             """)
         
         with col2:
-            # ROI visualization
-            costs_benefits = pd.DataFrame({
-                'Category': ['Implementation Cost', 'Annual Operating Cost', 'Annual Savings'],
-                'Amount': [330000, 970000, 1476000],
-                'Type': ['Cost', 'Cost', 'Benefit']
-            })
-            
-            fig = px.bar(
-                costs_benefits,
-                x='Category',
-                y='Amount',
-                color='Type',
-                title='Annual Cost-Benefit Analysis',
-                color_discrete_map={'Cost': 'red', 'Benefit': 'green'}
-            )
-            fig.update_layout(height=400)
-            st.plotly_chart(fig, use_container_width=True)
+            st.image("models/business_impact_analysis.png", use_container_width=True)
         
         st.subheader("🎯 Clinical Impact")
         
@@ -606,18 +519,15 @@ def main():
         - Always consider patient-specific factors not captured in the model
         
         ### 🛠️ Technical Implementation
-        
-        - **Framework**: FastAPI + Docker for production deployment
-        - **Cloud Ready**: AWS ECS Fargate deployment configuration
-        - **Scalable**: Auto-scaling based on demand
+
+        - **Framework**: FastAPI + Docker for local and production deployment
         - **Secure**: Healthcare-appropriate security controls
         - **Monitored**: Comprehensive logging and performance tracking
-        
+
         ### 📚 Learn More
-        
-        - **GitHub Repository**: [View Source Code](https://github.com/your-repo)
+
+        - **GitHub Repository**: [View Source Code](https://github.com/amolprakash/hospital_readmission_predictor)
         - **Model Documentation**: Detailed feature engineering and validation
-        - **Deployment Guide**: Step-by-step AWS deployment instructions
         - **API Documentation**: RESTful API for system integration
         
         ---

@@ -7,7 +7,7 @@ ARG BUILD_DATE
 ARG VCS_REF
 
 # Labels for metadata
-LABEL maintainer="amol.prakash@example.com" \
+LABEL maintainer="amol.kanchana@gmail.com" \
       version="${MODEL_VERSION}" \
       description="Hospital Readmission Risk Predictor API" \
       build-date="${BUILD_DATE}" \
