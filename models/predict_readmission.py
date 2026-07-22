@@ -15,23 +15,23 @@ def load_model():
 def predict_readmission(patient_data):
     """
     Predict readmission probability for a patient
-    
+
     Args:
         patient_data (dict or pd.DataFrame): Patient features
-        
+
     Returns:
         dict: Prediction results
     """
     model = load_model()
-    
+
     # Convert to DataFrame if dict
     if isinstance(patient_data, dict):
         patient_data = pd.DataFrame([patient_data])
-    
+
     # Make prediction
     prob = model.predict_proba(patient_data)[:, 1][0]
     prediction = model.predict(patient_data)[0]
-    
+
     # Risk category
     if prob >= 0.5:
         risk_category = "Very High" if prob >= 0.8 else "High"
@@ -41,7 +41,7 @@ def predict_readmission(patient_data):
         risk_category = "Low"
     else:
         risk_category = "Very Low"
-    
+
     return {
         'readmission_probability': prob,
         'readmission_prediction': bool(prediction),
@@ -58,7 +58,7 @@ if __name__ == "__main__":
         'CHRONIC_CONDITION_COUNT': 3,
         # ... other features
     }
-    
+
     result = predict_readmission(sample_patient)
     print(f"Readmission Probability: {result['readmission_probability']:.3f}")
     print(f"Risk Category: {result['risk_category']}")

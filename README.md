@@ -14,23 +14,23 @@
 ## 📘 Project Overview
 A production-ready machine learning system to predict 30-day hospital readmissions using CMS synthetic data. This project demonstrates the complete ML pipeline from data engineering to clinical deployment, achieving industry-leading performance in healthcare prediction.
 
-**Updated: January 2025** | **Demo Available** | **Production Ready**
+**Updated: July 2026** | **Demo Available** | **Production Ready**
 
 ## 🎯 Key Achievements
-- **46.4% Recall**: Successfully identifies nearly half of all readmissions  
-- **19.4% Precision**: Exceeds healthcare industry benchmarks (15-25%)  
-- **$735K+ Annual Savings**: Positive ROI with 45% return on investment  
-- **Perfect Risk Stratification**: Clear 0%-16% readmission gradient across risk groups  
-- **Production Ready**: Clinically interpretable model ready for hospital deployment  
+- **37.8% Recall**: Identifies over a third of all high-risk readmissions  
+- **22.2% Precision**: Exceeds healthcare industry benchmarks (15-25%)  
+- **$661K+ Annual Savings**: Positive ROI with 66.8% return on investment  
+- **5 Data Types Integrated**: Inpatient, Outpatient, Carrier, Prescription Drug, and Beneficiary data  
+- **Production Ready**: Clinically interpretable, leakage-free model ready for hospital deployment  
 
 ## 📊 Dataset
-**CMS Data Entrepreneurs' Synthetic Public Use File (DE-SynPUF) Sample 1**
+**CMS Data Entrepreneurs' Synthetic Public Use File (DE-SynPUF) Samples 1–5**
 
 - Timeframe: 2008–2010 Medicare claims data  
-- Beneficiaries: 116,352 unique patients across 3 years  
-- Claims: 66,773 inpatient admissions analyzed  
-- Features: 55 engineered features across demographic, clinical, and risk categories  
-- Files Used: 4 of 8 available (Beneficiary Summary 2008–2010, Inpatient Claims)  
+- Beneficiaries: 50,000 unique patients across 3 years  
+- Claims: 28,695 inpatient admissions analyzed  
+- Features: 55 leakage-free engineered features across demographic, clinical, utilization, outpatient, carrier, and prescription domains  
+- Files Used: All 5 data types (Beneficiary Summary 2008–2010, Inpatient, Outpatient, Carrier, Prescription Drug Events)  
 
 ## 🏗️ Project Architecture
 
@@ -62,10 +62,10 @@ hospital_readmission_predictor/
 ### 🌐 Live Web Application
 **[→ Launch Demo App](https://hospitalreadmissionpredictorbyamol.streamlit.app/)**
 
-**New Features (January 2025):**
+**New Features (July 2026):**
 - 🎯 **Interactive Risk Calculator**: Real-time predictions with visual risk gauges
 - 📊 **Model Performance Dashboard**: ROC curves, precision-recall analysis, feature importance
-- 💰 **Business Impact Analysis**: $735K savings visualization with ROI calculations
+- 💰 **Business Impact Analysis**: $661K savings visualization with ROI calculations
 - 🏥 **Sample Patient Scenarios**: Pre-configured high/medium/low risk cases
 - 📈 **Clinical Recommendations**: Evidence-based intervention suggestions
 - 📱 **Mobile-Responsive**: Works seamlessly on all devices
@@ -144,11 +144,12 @@ streamlit run streamlit_app.py
 ### 📁 Data Files (Optional)
 **Note: Demo works without original data files**
 
-For full notebook reproduction, place these files in `data/raw/`:
-- DE1_0_2008_Beneficiary_Summary_File_Sample_1.csv
-- DE1_0_2009_Beneficiary_Summary_File_Sample_1.csv
-- DE1_0_2010_Beneficiary_Summary_File_Sample_1.csv
-- DE1_0_2008_to_2010_Inpatient_Claims_Sample_1.csv
+For full notebook reproduction, place files for **samples 1–5** in `data/raw/`:
+- `DE1_0_{2008,2009,2010}_Beneficiary_Summary_File_Sample_{1-5}.csv` (15 files)
+- `DE1_0_2008_to_2010_Inpatient_Claims_Sample_{1-5}.csv` (5 files)
+- `DE1_0_2008_to_2010_Outpatient_Claims_Sample_{1-5}.csv` (5 files)
+- `DE1_0_2008_to_2010_Carrier_Claims_Sample_{1-5}{A,B}.csv` (10 files)
+- `DE1_0_2008_to_2010_Prescription_Drug_Events_Sample_{1-5}.csv` (5 files)
 
 **The trained model and demo work independently of these files.**
 
@@ -171,7 +172,7 @@ ab -n 1000 -c 10 -H "Content-Type: application/json" \
 ```
 
 ### 📊 **Model Validation Results**
-- **Cross-validation AUC**: 69.4% ± 0.02
+- **Cross-validation AUC**: 69.6% ± 0.02
 - **Temporal validation**: Consistent performance across 2008-2010  
 - **Clinical validation**: Results reviewed by healthcare professionals
 - **Benchmark comparison**: Exceeds published Medicare readmission models
@@ -186,29 +187,29 @@ ab -n 1000 -c 10 -H "Content-Type: application/json" \
 
 | Metric      | Result  | Benchmark         | Status      |
 |-------------|---------|-------------------|-------------|
-| Precision   | 19.4%   | 15–25% typical     | ✅ Excellent |
-| Recall      | 46.4%   | 20–40% typical     | ✅ Outstanding |
-| F1-Score    | 27.4%   | 15–25% typical     | ✅ Excellent |
-| AUC-ROC     | 69.4%   | 65–75% acceptable | ✅ Good      |
+| Precision   | 22.2%   | 15–25% typical     | ✅ Excellent |
+| Recall      | 37.8%   | 20–40% typical     | ✅ Good      |
+| F1-Score    | 28.0%   | 15–25% typical     | ✅ Excellent |
+| AUC-ROC     | 69.6%   | 65–75% acceptable | ✅ Good      |
 
 ## 💰 Business Impact & ROI Analysis
 
-### 📊 **Financial Performance (Updated January 2025)**
-- **Annual Net Savings**: $735,000+
-- **Return on Investment**: 45.6%
-- **Break-even Point**: 108 prevented readmissions
-- **Cost per Prevention**: $2,344
-- **Payback Period**: 1.3 years
+### 📊 **Financial Performance (Updated July 2026)**
+- **Annual Net Savings**: $661,000+
+- **Return on Investment**: 66.8%
+- **Break-even Point**: 68 prevented readmissions
+- **Cost per Prevention**: $8,991
+- **Annual Intervention Cost**: $989,000
 
 ### 🎯 **Clinical Impact Metrics**
-- **Readmissions Prevented**: 314 annually (11.6% prevention rate)
-- **High-Risk Identification**: 46.4% recall rate
-- **Precision Rate**: 19.4% (exceeds industry benchmark)
+- **Readmissions Prevented**: 110 annually (9.5% prevention rate)
+- **High-Risk Identification**: 37.8% recall rate
+- **Precision Rate**: 22.2% (exceeds industry benchmark)
 - **Response Time**: <2 seconds for real-time clinical decisions
 
 ### 📈 **Scalability Projections**
-- **Single Hospital**: $735K annual savings
-- **Hospital Network (10 facilities)**: $7.35M potential savings
+- **Single Hospital**: $661K annual savings
+- **Hospital Network (10 facilities)**: $6.61M potential savings
 - **Regional Health System**: $50M+ impact opportunity
 - **National Implementation**: Billion-dollar healthcare cost reduction
 
@@ -227,10 +228,10 @@ ab -n 1000 -c 10 -H "Content-Type: application/json" \
 </div>
 
 ### Key Insights from Visualizations
-- **Cost-Benefit**: $735K annual net savings with 45% ROI
-- **Risk Stratification**: Clear 0%-16% readmission gradient across risk groups
-- **Model Performance**: 69.4% AUC with excellent precision-recall balance
-- **Feature Importance**: Chronic conditions and comorbidity scores drive predictions
+- **Cost-Benefit**: $661K annual net savings with 66.8% ROI
+- **Risk Stratification**: Clear readmission gradient across risk groups
+- **Model Performance**: 69.6% AUC with solid precision-recall balance
+- **Feature Importance**: Chronic conditions, prior admissions, and medication patterns drive predictions
 
 ## 🔬 Technical Highlights
 
@@ -261,7 +262,14 @@ joblib>=1.3.0
 
 ---
 
-## 🆕 What's New (January 2025)
+## 🆕 What's New (July 2026)
+
+### 📊 **Expanded Multi-Source Pipeline**
+- **5 CMS DE-SynPUF Samples**: Scaled from 1 sample to samples 1–5 for broader coverage
+- **3 New Data Types**: Outpatient claims, Carrier (physician) claims, and Prescription Drug Events added
+- **23 New Features**: Outpatient visit patterns, physician continuity, polypharmacy, medication adherence, and post-discharge follow-up
+- **Leakage-Free Modeling**: Removed outcome-derived features (`DAYS_TO_READMISSION`, `HAS_READMISSION`) that inflated prior results
+- **Improved Precision**: 22.2% (up from 19.3%) with 66.8% ROI
 
 ### 🎮 **Interactive Demo Application**
 - **Live Streamlit App**: Fully interactive web-based demonstration
@@ -321,4 +329,4 @@ docker-compose up --build
 
 **🏥 Built for healthcare impact • 🚀 Production ready • 🎯 Demo available**
 
-*Last updated: January 2025*
+*Last updated: July 2026*

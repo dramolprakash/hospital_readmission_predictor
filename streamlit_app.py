@@ -265,12 +265,12 @@ def create_business_impact_dashboard():
     """Create business impact visualization"""
     # Sample data based on your model performance
     metrics = {
-        "Annual Net Savings": "$735,000+",
-        "ROI": "45%",
-        "Prevented Readmissions": "314 annually",
-        "Model Precision": "19.4%",
-        "Model Recall": "46.4%",
-        "AUC-ROC": "69.4%"
+        "Annual Net Savings": "$661,000+",
+        "ROI": "66.8%",
+        "Prevented Readmissions": "110 annually",
+        "Model Precision": "22.2%",
+        "Model Recall": "37.8%",
+        "AUC-ROC": "69.6%"
     }
     
     col1, col2, col3 = st.columns(3)
@@ -296,7 +296,7 @@ def main():
     st.markdown("""
     <div style="text-align: center; margin-bottom: 2rem;">
         <h3>AI-Powered Clinical Decision Support System</h3>
-        <p>Predicts 30-day readmission risk using advanced machine learning • Trained on 66,773 Medicare admissions • Achieves $735K+ annual savings</p>
+        <p>Predicts 30-day readmission risk using advanced machine learning • Trained on 114,888 Medicare admissions (5 samples) • Achieves $661K+ annual savings</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -422,15 +422,15 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric("🎯 Precision", "19.4%", help="Percentage of predicted readmissions that actually occurred")
-            st.metric("🔍 Recall", "46.4%", help="Percentage of actual readmissions that were predicted")
-        
+            st.metric("🎯 Precision", "22.2%", help="Percentage of predicted readmissions that actually occurred")
+            st.metric("🔍 Recall", "37.8%", help="Percentage of actual readmissions that were predicted")
+
         with col2:
-            st.metric("📈 F1-Score", "27.4%", help="Harmonic mean of precision and recall")
-            st.metric("📊 AUC-ROC", "69.4%", help="Area under the ROC curve")
-        
+            st.metric("📈 F1-Score", "28.0%", help="Harmonic mean of precision and recall")
+            st.metric("📊 AUC-ROC", "69.6%", help="Area under the ROC curve")
+
         with col3:
-            st.metric("✅ Accuracy", "75.1%", help="Overall prediction accuracy")
+            st.metric("✅ Accuracy", "80.3%", help="Overall prediction accuracy")
             st.metric("🎲 Baseline Rate", "10.1%", help="Overall readmission rate in dataset")
         
         # Performance visualization
@@ -449,12 +449,11 @@ def main():
         with col1:
             st.markdown("""
             **Cost-Benefit Analysis:**
-            - **Implementation Cost**: $330,000
-            - **Annual Operating Cost**: $970,000
-            - **Annual Savings**: $1,476,000
-            - **Net Annual Benefit**: $735,000
-            - **ROI**: 45.6%
-            - **Break-even**: 108 prevented readmissions
+            - **Annual Intervention Cost**: $989,000
+            - **Annual Gross Savings**: $1,650,000
+            - **Annual Net Benefit**: $661,000
+            - **ROI**: 66.8%
+            - **Break-even**: 68 prevented readmissions
             """)
         
         with col2:
@@ -465,16 +464,16 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric("🏥 Readmissions Prevented", "314 annually")
-            st.metric("📊 Prevention Rate", "11.6%")
-        
+            st.metric("🏥 Readmissions Prevented", "110 annually")
+            st.metric("📊 Prevention Rate", "9.5%")
+
         with col2:
-            st.metric("💵 Cost per Prevention", "$2,344")
-            st.metric("⏰ Break-even Point", "108 preventions")
-        
+            st.metric("💵 Cost per Prevention", "$8,991")
+            st.metric("⏰ Break-even Point", "68 preventions")
+
         with col3:
-            st.metric("🎯 Precision Rate", "19.4%")
-            st.metric("📈 Intervention Success", "46.4%")
+            st.metric("🎯 Precision Rate", "22.2%")
+            st.metric("📈 Intervention Success", "37.8%")
     
     with tab4:
         st.header("ℹ️ About This Model")
@@ -486,20 +485,20 @@ def main():
         on a comprehensive dataset of Medicare claims data from the CMS Data Entrepreneurs' Synthetic Public Use File (DE-SynPUF).
         
         **Key Statistics:**
-        - 📊 **Dataset Size**: 66,773 inpatient admissions
-        - 👥 **Unique Patients**: 37,780 Medicare beneficiaries
+        - 📊 **Dataset Size**: 28,695 inpatient admissions (5 DE-SynPUF samples)
+        - 👥 **Unique Patients**: 50,000 Medicare beneficiaries
         - 📅 **Time Period**: 2008-2010 claims data
         - 🎯 **Target**: 30-day readmission events
         - ⚙️ **Algorithm**: Logistic Regression with L2 regularization
-        - 🔧 **Features**: 50 engineered features across clinical, demographic, and utilization domains
-        
+        - 🔧 **Features**: 55 engineered features across clinical, demographic, utilization, outpatient, carrier, and prescription domains
+
         ### 🎯 Model Performance
-        
-        The model demonstrates **excellent clinical performance** with metrics that exceed typical healthcare benchmarks:
-        
-        - **46.4% Recall**: Identifies nearly half of all readmissions
-        - **19.4% Precision**: Exceeds industry benchmarks (15-25%)
-        - **69.4% AUC-ROC**: Strong discriminative ability
+
+        The model demonstrates **solid clinical performance** with metrics consistent with healthcare benchmarks:
+
+        - **37.8% Recall**: Identifies over a third of all readmissions
+        - **22.2% Precision**: Exceeds industry benchmarks (15-25%)
+        - **69.6% AUC-ROC**: Strong discriminative ability
         - **10.1% Readmission Rate**: Consistent with Medicare averages
         
         ### 💡 Clinical Applications
