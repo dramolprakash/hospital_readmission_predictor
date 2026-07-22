@@ -355,16 +355,16 @@ async def model_info():
         "algorithm": "Logistic Regression",
         "features": len(feature_names) if feature_names else 0,
         "performance": {
-            "precision": 0.1942,
-            "recall": 0.4642,
-            "f1_score": 0.2738,
-            "auc_roc": 0.6935,
-            "accuracy": 0.7506
+            "precision": 0.2224,
+            "recall": 0.3780,
+            "f1_score": 0.2801,
+            "auc_roc": 0.6958,
+            "accuracy": 0.8029
         },
         "business_impact": {
-            "annual_net_savings": 1476000,
-            "roi": 45.6,
-            "prevention_rate": 11.6
+            "annual_net_savings": 661000,
+            "roi": 66.8,
+            "prevention_rate": 9.5
         },
         "clinical_thresholds": {
             "high_risk": 0.5,

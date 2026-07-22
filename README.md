@@ -14,11 +14,11 @@
 ## 📘 Project Overview
 A production-ready machine learning system to predict 30-day hospital readmissions using CMS synthetic data. This project demonstrates the complete ML pipeline from data engineering to clinical deployment, achieving industry-leading performance in healthcare prediction.
 
-**Updated: July 2026** | **Demo Available** | **Production Ready**
+**Demo Available** | **Production Ready**
 
 ## 🎯 Key Achievements
 - **37.8% Recall**: Identifies over a third of all high-risk readmissions  
-- **22.2% Precision**: Exceeds healthcare industry benchmarks (15-25%)  
+- **22.2% Precision**: Within healthcare industry benchmark range (15–25%)  
 - **$661K+ Annual Savings**: Positive ROI with 66.8% return on investment  
 - **5 Data Types Integrated**: Inpatient, Outpatient, Carrier, Prescription Drug, and Beneficiary data  
 - **Production Ready**: Clinically interpretable, leakage-free model ready for hospital deployment  
@@ -62,7 +62,6 @@ hospital_readmission_predictor/
 ### 🌐 Live Web Application
 **[→ Launch Demo App](https://hospitalreadmissionpredictorbyamol.streamlit.app/)**
 
-**New Features (July 2026):**
 - 🎯 **Interactive Risk Calculator**: Real-time predictions with visual risk gauges
 - 📊 **Model Performance Dashboard**: ROC curves, precision-recall analysis, feature importance
 - 💰 **Business Impact Analysis**: $661K savings visualization with ROI calculations
@@ -158,7 +157,7 @@ For full notebook reproduction, place files for **samples 1–5** in `data/raw/`
 
 ## 🧪 Testing & Quality Assurance
 
-### 🔍 **Comprehensive Test Suite (New)**
+### 🔍 **Comprehensive Test Suite**
 ```bash
 # Run API endpoint tests
 python -m pytest tests/test_api.py -v
@@ -194,7 +193,7 @@ ab -n 1000 -c 10 -H "Content-Type: application/json" \
 
 ## 💰 Business Impact & ROI Analysis
 
-### 📊 **Financial Performance (Updated July 2026)**
+### 📊 **Financial Performance**
 - **Annual Net Savings**: $661,000+
 - **Return on Investment**: 66.8%
 - **Break-even Point**: 68 prevented readmissions
@@ -204,7 +203,7 @@ ab -n 1000 -c 10 -H "Content-Type: application/json" \
 ### 🎯 **Clinical Impact Metrics**
 - **Readmissions Prevented**: 110 annually (9.5% prevention rate)
 - **High-Risk Identification**: 37.8% recall rate
-- **Precision Rate**: 22.2% (exceeds industry benchmark)
+- **Precision Rate**: 22.2% (within industry benchmark range 15–25%)
 - **Response Time**: <2 seconds for real-time clinical decisions
 
 ### 📈 **Scalability Projections**
@@ -260,41 +259,6 @@ joblib>=1.3.0
 4. Feature engineering (Notebook 04)  
 5. Modeling & evaluation (Notebook 05)
 
----
-
-## 🆕 What's New (July 2026)
-
-### 📊 **Expanded Multi-Source Pipeline**
-- **5 CMS DE-SynPUF Samples**: Scaled from 1 sample to samples 1–5 for broader coverage
-- **3 New Data Types**: Outpatient claims, Carrier (physician) claims, and Prescription Drug Events added
-- **23 New Features**: Outpatient visit patterns, physician continuity, polypharmacy, medication adherence, and post-discharge follow-up
-- **Leakage-Free Modeling**: Removed outcome-derived features (`DAYS_TO_READMISSION`, `HAS_READMISSION`) that inflated prior results
-- **Improved Precision**: 22.2% (up from 19.3%) with 66.8% ROI
-
-### 🎮 **Interactive Demo Application**
-- **Live Streamlit App**: Fully interactive web-based demonstration
-- **Real-time Predictions**: Instant risk assessment with visual feedback
-- **Sample Scenarios**: Pre-loaded high/medium/low risk patient cases
-- **Performance Dashboard**: Interactive model metrics and ROC curves
-- **Business Impact Visualization**: ROI calculations and cost-benefit analysis
-- **Mobile-Responsive Design**: Works seamlessly across all devices
-
-### 🏭 **Production-Ready Infrastructure**
-- **FastAPI REST API**: Enterprise-grade endpoints for hospital integration
-- **Docker Containerization**: Optimized production deployment
-
-### 🧪 **Testing & Quality Assurance**
-- **Comprehensive Test Suite**: API endpoint and integration testing
-- **Load Testing Scripts**: Performance validation for production use
-- **Sample Test Data**: Realistic patient scenarios for validation
-- **Health Check Endpoints**: Automated monitoring and alerting
-
-### 📚 **Documentation & Guides**
-- **Deployment Guide**: Step-by-step AWS deployment instructions
-- **API Documentation**: Interactive Swagger/OpenAPI documentation  
-- **Demo Guide**: Instructions for Streamlit Cloud deployment
-- **Architecture Documentation**: Technical implementation details
-
 
 ## 🚀 Getting Started (Quick Links)
 
@@ -329,4 +293,3 @@ docker-compose up --build
 
 **🏥 Built for healthcare impact • 🚀 Production ready • 🎯 Demo available**
 
-*Last updated: July 2026*

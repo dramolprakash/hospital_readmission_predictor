@@ -497,7 +497,7 @@ def main():
         The model demonstrates **solid clinical performance** with metrics consistent with healthcare benchmarks:
 
         - **37.8% Recall**: Identifies over a third of all readmissions
-        - **22.2% Precision**: Exceeds industry benchmarks (15-25%)
+        - **22.2% Precision**: Within industry benchmark range (15-25%)
         - **69.6% AUC-ROC**: Strong discriminative ability
         - **10.1% Readmission Rate**: Consistent with Medicare averages
         
