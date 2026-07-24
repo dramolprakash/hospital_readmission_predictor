@@ -2,40 +2,46 @@ READMISSION PREDICTION MODEL METADATA
 ==================================================
 
 MODEL INFORMATION:
-- Algorithm: Logistic Regression
-- Training Date: 2026-07-22 15:39:33
+- Algorithm: Gradient Boosting
+- Training Date: 2026-07-24 12:19:43
 - Random State: 42
 - Features: 48
 - Training Samples: 22,956
 - Test Samples: 5,739
 
 PERFORMANCE METRICS:
-- Accuracy: 0.8029
-- Precision: 0.2224
-- Recall: 0.3780
-- F1: 0.2801
-- Auc: 0.6958
+- Accuracy: 0.8986
+- Precision: 0.5000
+- Recall: 0.0258
+- F1: 0.0490
+- Auc: 0.6571
 
 BUSINESS IMPACT:
-- Net Savings: $330,500
-- Annual Net Savings: $661,000
-- ROI: 66.8%
-- Prevented Readmissions: 55
-- Annual Prevented: 110
-- Prevention Rate: 9.5%
+- Net Savings: $41,250
+- Annual Net Savings: $82,500
+- ROI: 275.0%
+- Prevented Readmissions: 4
+- Annual Prevented: 8
+- Prevention Rate: 0.6%
 
 MODEL PARAMETERS:
-- C: 0.1
-- class_weight: balanced
-- dual: False
-- fit_intercept: True
-- intercept_scaling: 1
-- l1_ratio: 0.0
-- max_iter: 2000
-- n_jobs: None
-- penalty: l2
+- ccp_alpha: 0.0
+- criterion: deprecated
+- init: None
+- learning_rate: 0.1
+- loss: log_loss
+- max_depth: 8
+- max_features: None
+- max_leaf_nodes: None
+- min_impurity_decrease: 0.0
+- min_samples_leaf: 5
+- min_samples_split: 10
+- min_weight_fraction_leaf: 0.0
+- n_estimators: 250
+- n_iter_no_change: None
 - random_state: 42
-- solver: liblinear
+- subsample: 0.8
 - tol: 0.0001
+- validation_fraction: 0.1
 - verbose: 0
 - warm_start: False
