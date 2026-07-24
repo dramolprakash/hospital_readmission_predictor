@@ -9,7 +9,7 @@ import numpy as np
 
 def load_model():
     """Load the trained readmission prediction model"""
-    model = joblib.load('readmission_model_gradient_boosting.joblib')
+    model = joblib.load('readmission_model_logistic_regression.joblib')
     return model
 
 def predict_readmission(patient_data):

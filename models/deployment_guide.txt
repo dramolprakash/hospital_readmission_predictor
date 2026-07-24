@@ -28,6 +28,6 @@ CLINICAL INTERPRETATION:
 - Probability < 0.3: Low risk, standard care
 
 PERFORMANCE EXPECTATIONS:
-- Precision: 50.0%
-- Recall: 2.6%
-- Expected ROI: 275%
+- Precision: 21.6%
+- Recall: 41.1%
+- Expected ROI: 62%

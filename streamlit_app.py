@@ -54,7 +54,7 @@ def load_model_artifacts():
     """Load model and create sample data"""
     try:
         # Try to load the actual model (might not work in demo without model files)
-        model_path = "models/readmission_model_gradient_boosting.joblib"
+        model_path = "models/readmission_model_logistic_regression.joblib"
         if os.path.exists(model_path):
             model = joblib.load(model_path)
             return model, True
@@ -265,12 +265,12 @@ def create_business_impact_dashboard():
     """Create business impact visualization"""
     # Sample data based on your model performance
     metrics = {
-        "Annual Net Savings": "$82,500",
-        "ROI": "275.0%",
-        "Prevented Readmissions": "8 annually",
-        "Model Precision": "50.0%",
-        "Model Recall": "2.6%",
-        "AUC-ROC": "65.7%"
+        "Annual Net Savings": "$685,500",
+        "ROI": "61.9%",
+        "Prevented Readmissions": "120 annually",
+        "Model Precision": "21.6%",
+        "Model Recall": "41.1%",
+        "AUC-ROC": "69.7%"
     }
     
     col1, col2, col3 = st.columns(3)
@@ -296,7 +296,7 @@ def main():
     st.markdown("""
     <div style="text-align: center; margin-bottom: 2rem;">
         <h3>AI-Powered Clinical Decision Support System</h3>
-        <p>Predicts 30-day readmission risk using advanced machine learning • Trained on 28,695 inpatient admissions (5 DE-SynPUF samples) • Achieves $82.5K annual savings at 275% ROI</p>
+        <p>Predicts 30-day readmission risk using advanced machine learning • Trained on 28,695 inpatient admissions (5 DE-SynPUF samples) • Achieves $685.5K annual savings at 61.9% ROI</p>
     </div>
     """, unsafe_allow_html=True)
     
@@ -422,20 +422,20 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric("🎯 Precision", "50.0%", help="Percentage of predicted readmissions that actually occurred")
-            st.metric("🔍 Recall", "2.6%", help="Percentage of actual readmissions that were predicted")
+            st.metric("🎯 Precision", "21.6%", help="Percentage of predicted readmissions that actually occurred")
+            st.metric("🔍 Recall", "41.1%", help="Percentage of actual readmissions that were predicted")
 
         with col2:
-            st.metric("📈 F1-Score", "4.9%", help="Harmonic mean of precision and recall")
-            st.metric("📊 AUC-ROC", "65.7%", help="Area under the ROC curve")
+            st.metric("📈 F1-Score", "28.3%", help="Harmonic mean of precision and recall")
+            st.metric("📊 AUC-ROC", "69.7%", help="Area under the ROC curve")
 
         with col3:
-            st.metric("✅ Accuracy", "89.9%", help="Overall prediction accuracy")
+            st.metric("✅ Accuracy", "78.9%", help="Overall prediction accuracy")
             st.metric("🎲 Baseline Rate", "10.1%", help="Overall readmission rate in dataset")
 
         # Performance visualization
         st.subheader("Model Performance Details")
-        st.image("models/gradient_boosting_performance.png", use_container_width=True)
+        st.image("models/logistic_regression_performance.png", use_container_width=True)
     
     with tab3:
         st.header("💰 Business Impact Analysis")
@@ -449,11 +449,11 @@ def main():
         with col1:
             st.markdown("""
             **Cost-Benefit Analysis:**
-            - **Annual Intervention Cost**: $30,000
-            - **Annual Gross Savings**: $112,500
-            - **Annual Net Benefit**: $82,500
-            - **ROI**: 275.0%
-            - **Break-even**: 3 prevented readmissions
+            - **Annual Intervention Cost**: $1,107,000
+            - **Annual Gross Savings**: $1,793,000
+            - **Annual Net Benefit**: $685,500
+            - **ROI**: 61.9%
+            - **Break-even**: 74 prevented readmissions
             """)
         
         with col2:
@@ -464,16 +464,16 @@ def main():
         col1, col2, col3 = st.columns(3)
         
         with col1:
-            st.metric("🏥 Readmissions Prevented", "8 annually")
-            st.metric("📊 Prevention Rate", "0.6%")
+            st.metric("🏥 Readmissions Prevented", "120 annually")
+            st.metric("📊 Prevention Rate", "10.3%")
 
         with col2:
-            st.metric("💵 Cost per Prevention", "$3,750")
-            st.metric("⏰ Break-even Point", "3 preventions")
+            st.metric("💵 Cost per Prevention", "$9,229")
+            st.metric("⏰ Break-even Point", "74 preventions")
 
         with col3:
-            st.metric("🎯 Precision Rate", "50.0%")
-            st.metric("📈 Intervention Success", "2.6%")
+            st.metric("🎯 Precision Rate", "21.6%")
+            st.metric("📈 Recall (Coverage)", "41.1%")
     
     with tab4:
         st.header("ℹ️ About This Model")
@@ -489,16 +489,16 @@ def main():
         - 👥 **Unique Patients**: 50,000 Medicare beneficiaries
         - 📅 **Time Period**: 2008-2010 claims data
         - 🎯 **Target**: 30-day readmission events
-        - ⚙️ **Algorithm**: Gradient Boosting (selected as best model)
+        - ⚙️ **Algorithm**: Logistic Regression (selected as best model)
         - 🔧 **Features**: 48 engineered features across clinical, demographic, utilization, outpatient, carrier, and prescription domains
 
         ### 🎯 Model Performance
 
-        The model demonstrates **high-precision conservative screening** — optimal for flagging the highest-risk patients:
+        The model demonstrates **balanced risk identification** — finding over 40% of actual readmissions while maintaining clinically actionable precision:
 
-        - **50.0% Precision**: Half of all flagged patients are true readmissions (vs 10.1% base rate)
-        - **2.6% Recall**: Highly selective — flags only the clearest high-risk cases
-        - **65.7% AUC-ROC**: Moderate discriminative ability
+        - **21.6% Precision**: ~1 in 5 flagged patients is a true readmission (vs 10.1% base rate — 2× lift)
+        - **41.1% Recall**: Identifies 4 in 10 future readmissions, enabling proactive intervention
+        - **69.7% AUC-ROC**: Solid discriminative ability above chance
         - **10.1% Readmission Rate**: Consistent with Medicare averages
         
         ### 💡 Clinical Applications
